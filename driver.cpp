@@ -6,16 +6,17 @@
 using namespace std;
 
 //string firstHalf(string str);
-string withoutEnd(string str);
+//string withoutEnd(string str);
+string comboString(string str, string str2);
 
 int main()
 {
 
-	assert(withoutEnd("hello") == "ell");
-	assert(withoutEnd("java") == "av");
-	assert(withoutEnd("coding") == "odin");
-	assert(withoutEnd("davidcolin") == "avidcoli");
-	assert(withoutEnd("colindavid") == "olindavi");
+	assert(comboString("Hello", "Hi") == "HiHelloHi");
+	assert(comboString("Hi", "Hello") == "HiHelloHi");
+	assert(comboString("aaa", "b") == "baaab");
+	assert(comboString("a", "bbb") == "abbba");
+	assert(comboString("c", "ddd") == "cdddc");
 
 
 
@@ -39,7 +40,7 @@ return 0;
 
 //****************************************
 
-string withoutEnd(string str)
+/*string withoutEnd(string str)
 {
 	int i;
 	string s;
@@ -50,8 +51,22 @@ string withoutEnd(string str)
 	return s;
 
 
+}*/
+
+//********************************************
+
+string comboString(string str, string str2)
+{
+	string temp;
+	if(str.length() < str2.length())
+	{
+		temp = str +str2 + str;
+		return temp;
+	}
+	else
+	{
+		temp = str2 + str + str2;
+		return temp;
+	}
+
 }
-
-//********************************************8
-
-
